@@ -80,12 +80,12 @@ docker run -p 8080:8080 -p 50000:50000 --name jenkins \
   -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts
 ```
 
-<img src="Images/Bild1.png" width="600">
+<img src="images/Bild1.png" width="600">
 
 Nach dem Start war Jenkins über `http://localhost:8080` erreichbar. Das Unlock-Passwort wurde im Log ausgegeben und im Browser eingegeben.
 
-<img src="Images/Bild2.png" width="600">
-<img src="Images/Bild3.png" width="600">
+<img src="images/Bild2.png" width="600">
+<img src="images/Bild3.png" width="600">
 
 #### ⚙️ Erste Konfiguration
 
@@ -93,7 +93,7 @@ Nach dem Start war Jenkins über `http://localhost:8080` erreichbar. Das Unlock-
 - Benutzerkonto für Jenkins wurde erstellt
 - Die Oberfläche war danach vollständig einsatzbereit
 
-<img src="Images/Bild4.png" width="600">
+<img src="images/Bild4.png" width="600">
 
 ---
 
@@ -105,7 +105,7 @@ Ein neuer **Freestyle-Job** wurde in Jenkins erstellt. Ziel war es, das Java-Bac
 
 Das Repository `https://github.com/pugliale/DevOps-07-CI` wurde als Quelle hinterlegt.
 
-<img src="Images/Bild5.png" width="600">
+<img src="images/Bild5.png" width="600">
 
 #### 🧪 Build-Schritte
 
@@ -123,8 +123,8 @@ Damit werden alle Unit Tests mit **JUnit 5** ausgeführt.
 
 Der Build wurde manuell ausgelöst. Jenkins führte den Testlauf über Gradle aus.
 
-<img src="Images/Bild6.png" width="600">
-<img src="Images/Bild7.png" width="600">
+<img src="images/Bild6.png" width="600">
+<img src="images/Bild7.png" width="600">
 
 Im Jenkins-Job war ersichtlich:
 - Der Build war **erfolgreich**
@@ -141,7 +141,7 @@ Durch das Aktivieren der JUnit-Testreportanzeige im Jenkins-Job konnte eine graf
 - Erfolgsquote
 - Verlauf über Builds hinweg
 
-<img src="Images/Bild8.png" width="600">
+<img src="images/Bild8.png" width="600">
 
 ---
 
@@ -154,8 +154,8 @@ Zur Validierung wurde gezielt ein fehlerhafter Testfall eingebaut. Anschliessend
 
 Dies demonstriert die **Verlässlichkeit und Aussagekraft automatisierter Tests im CI-Prozess**.
 
-<img src="Images/Bild9.png" width="600">
-<img src="Images/Bild10.png" width="600">
+<img src="images/Bild9.png" width="600">
+<img src="images/Bild10.png" width="600">
 
 ---
 ### 🐳 Docker, Artefakte & SonarQube Analyse
@@ -174,7 +174,7 @@ Ein zweiter Jenkins Job wurde erstellt, um zusätzlich zum Gradle-Build ein **Do
 docker build -t devopsdemo-backend .
 ```
 
-<img src="Images/Bild11.png" width="600">
+<img src="images/Bild11.png" width="600">
 
 Der Build lief erfolgreich durch – Jenkins konnte das Image erstellen.
 
@@ -188,7 +188,7 @@ Im `build/libs/`-Ordner wurde die **kompilierte Anwendung als .jar-Datei** erzeu
 
 Dieses Artefakt kann direkt in Docker-Container eingebettet oder zur Weiterverarbeitung genutzt werden.
 
-<img src="Images/Bild12.png" width="600">
+<img src="images/Bild12.png" width="600">
 
 ---
 
@@ -202,7 +202,7 @@ Zur Demonstration der Zuverlässigkeit wurde ein **gezielter Fehler** im Code ei
 
 Dies ist wichtig, um **Regressionen frühzeitig zu erkennen**.
 
-<img src="Images/Bild13.png" width="600">
+<img src="images/Bild13.png" width="600">
 
 ---
 
@@ -225,7 +225,7 @@ In den **Build-Schritten** des Jenkins-Jobs wurde ein zusätzlicher Schritt erg�
   -Dsonar.token=<TOKEN>
 ```
 
-<img src="Images/Bild14.png" width="600">
+<img src="images/Bild14.png" width="600">
 
 ---
 
@@ -238,9 +238,9 @@ Im SonarQube Dashboard wurden alle Metriken und Kennzahlen angezeigt:
 - Kein Duplicate Code
 - Keine Bugs oder Security Hotspots
 
-<img src="Images/Bild15.png" width="600">
-<img src="Images/Bild16.png" width="600">
-<img src="Images/Bild17.png" width="600">
+<img src="images/Bild15.png" width="600">
+<img src="images/Bild16.png" width="600">
+<img src="images/Bild17.png" width="600">
 
 Der Code gilt damit laut Analyse als **technisch exzellent**.
 
@@ -254,11 +254,10 @@ Zur Übersicht wurde auch die Jenkins-Konfiguration geprüft:
 - Dockerfile wurde korrekt erkannt
 - Alle relevanten Dateien wurden versioniert
 
-<img src="Images/Bild18.png" width="600">
+<img src="images/Bild18.png" width="600">
 
 ---
 
-## 🔧 Praktische Umsetzung – Teil 4/4  
 ### 🧱 Jenkins Pipeline mit Jenkinsfile & Cloud-Agent
 
 ---
@@ -299,8 +298,8 @@ pipeline {
 }
 ```
 
-<img src="Images/Bild19.png" width="600">
-<img src="Images/Bild20.png" width="600">
+<img src="images/Bild19.png" width="600">
+<img src="images/Bild20.png" width="600">
 
 ---
 
@@ -309,8 +308,8 @@ pipeline {
 Ein neuer Job vom Typ **Pipeline** wurde erstellt.  
 Die Konfiguration erfolgte über SCM → Git mit Link zum Repository und Pfad zum `Jenkinsfile`.
 
-<img src="Images/Bild21.png" width="600">
-<img src="Images/Bild22.png" width="600">
+<img src="images/Bild21.png" width="600">
+<img src="images/Bild22.png" width="600">
 
 ---
 
@@ -318,8 +317,8 @@ Die Konfiguration erfolgte über SCM → Git mit Link zum Repository und Pfad zu
 
 Der erste Build mit dem Jenkinsfile wurde gestartet. Jenkins führte automatisiert die Phasen **Build → Test → Analyse** aus.
 
-<img src="Images/Bild23.png" width="600">
-<img src="Images/Bild24.png" width="600">
+<img src="images/Bild23.png" width="600">
+<img src="images/Bild24.png" width="600">
 
 ---
 
@@ -331,9 +330,9 @@ Anschliessend wurde ein **Fehler im Code eingebaut** (Test schlägt fehl). Der n
 - Fehlerhafte Stufe klar markiert
 - Testreport zeigt Ursache
 
-<img src="Images/Bild25.png" width="600">
-<img src="Images/Bild26.png" width="600">
-<img src="Images/Bild27.png" width="600">
+<img src="images/Bild25.png" width="600">
+<img src="images/Bild26.png" width="600">
+<img src="images/Bild27.png" width="600">
 
 ---
 
@@ -346,10 +345,10 @@ Um Builds dynamisch in einem isolierten Container auszuführen, wurde ein Cloud-
 - Templates für Container-Umgebung definiert
 - Agent wird bei Bedarf automatisch erzeugt und wieder entfernt
 
-<img src="Images/Bild28.png" width="600">
-<img src="Images/Bild29.png" width="600">
-<img src="Images/Bild30.png" width="600">
-<img src="Images/Bild31.png" width="600">
+<img src="images/Bild28.png" width="600">
+<img src="images/Bild29.png" width="600">
+<img src="images/Bild30.png" width="600">
+<img src="images/Bild31.png" width="600">
 
 ---
 
@@ -361,11 +360,11 @@ Build mit aktivierter Cloud-Agent-Konfiguration:
 - Alle Stages laufen im Agent-Container
 - Nach Build wird der Container entfernt
 
-<img src="Images/Bild32.png" width="600">
-<img src="Images/Bild33.png" width="600">
-<img src="Images/Bild34.png" width="600">
-<img src="Images/Bild35.png" width="600">
-<img src="Images/Bild36.png" width="600">
+<img src="images/Bild32.png" width="600">
+<img src="images/Bild33.png" width="600">
+<img src="images/Bild34.png" width="600">
+<img src="images/Bild35.png" width="600">
+<img src="images/Bild36.png" width="600">
 
 ---
 
@@ -375,10 +374,9 @@ Build mit aktivierter Cloud-Agent-Konfiguration:
 - Container gelöscht
 - Logs exportiert und Build-Zustände dokumentiert
 
-<img src="Images/Bild37.png" width="600">
-<img src="Images/Bild38.png" width="600">
-<img src="Images/Bild39.png" width="600">
-<img src="Images/Bild40.png" width="600">
+<img src="images/Bild37.png" width="600">
+<img src="images/Bild39.png" width="600">
+<img src="images/Bild40.png" width="600">
 
 ---
 
@@ -389,34 +387,72 @@ Die Pipeline wurde mehrfach ausgeführt mit:
 - absichtlich fehlgeschlagenen Tests (rot)
 - Reanalyse im SonarQube
 
-<img src="Images/Bild41.png" width="600">
-<img src="Images/Bild42.png" width="600">
-<img src="Images/Bild43.png" width="600">
-<img src="Images/Bild44.png" width="600">
-<img src="Images/Bild45.png" width="600">
-<img src="Images/Bild46.png" width="600">
+<img src="images/Bild41.png" width="600">
+<img src="images/Bild42.png" width="600">
+<img src="images/Bild43.png" width="600">
+<img src="images/Bild44.png" width="600">
+<img src="images/Bild45.png" width="600">
+<img src="images/Bild46.png" width="600">
 
 ---
 
-### 🧾 Ergänzende Tests & Pipeline-Dokumentation (Screenshots 47–53)
+### 📄 Ergänzende Tests & Pipeline-Dokumentation
 
-Zum Abschluss wurden nochmals gezielte Validierungen durchgeführt, um die Stabilität der CI-Pipeline sicherzustellen:
+Zum Abschluss wurden nochmals gezielte Validierungen durchgeführt, um die Stabilität und Nachvollziehbarkeit der Continuous-Integration-Pipeline in Jenkins sicherzustellen. Die folgenden Screenshots dokumentieren die wichtigsten Aspekte:
 
-- **Bild47.png**: Übersicht über Build-Historie, inkl. Erfolg und Fehler
-- **Bild48.png**: Übersicht des vollständigen Pipeline-Laufs mit Zeitstempeln
-- **Bild49.png**: Build-Konfiguration im Detail
-- **Bild50.png**: Visualisierung der Stage-Sequenz und Status
-- **Bild51.png**: Konsolen-Logausgabe mit erfolgreichem Testlauf
-- **Bild52.png**: Build-Ergebnis aus SonarQube erneut geprüft und verglichen
-- **Bild53.png**: Abschliessende Build-Statistik im Jenkins Dashboard
+---
 
-<img src="Images/Bild47.png" width="600">
-<img src="Images/Bild48.png" width="600">
-<img src="Images/Bild49.png" width="600">
-<img src="Images/Bild50.png" width="600">
-<img src="Images/Bild51.png" width="600">
-<img src="Images/Bild52.png" width="600">
-<img src="Images/Bild53.png" width="600">
+- **🧾 Jenkins Build-Historie**  
+  Darstellung der gesamten Build-Historie in Jenkins. Hier erkennt man die Statusanzeige für erfolgreiche und fehlerhafte Builds, inklusive Rückverfolgbarkeit.
+
+  <img src="images/Bild47.png" width="600">
+
+---
+
+- **📊 Übersicht über Pipeline-Ausführung**  
+  Zeigt den vollständigen Ablauf eines CI-Laufs mit Zeitstempeln. Alle Stages (z. B. Clone, Build, Test) sind sichtbar – ein Beleg für stabile Abläufe.
+
+  <img src="images/Bild48.png" width="600">
+
+---
+
+- **⚙️ Build-Konfiguration im Detail**  
+  In diesem Screenshot ist die Build-Konfiguration ersichtlich, etwa die genutzten Parameter und Projektdefinitionen innerhalb der Pipeline.
+
+  <img src="images/Bild49.png" width="600">
+
+---
+
+- **📈 Visualisierung der Stage-Sequenz**  
+  Jenkins zeigt den vollständigen Ablauf der CI-Phasen in grafischer Form: Start, Checkout, Test, SonarQube-Analyse, Success. Dies erleichtert die Diagnose und Nachvollziehbarkeit.
+
+  <img src="images/Bild50.png" width="600">
+
+---
+
+- **🖥️ Konsolenausgabe bei erfolgreichem Lauf**  
+  Konsolenlog mit erfolgreicher Ausführung aller Pipeline-Stufen. Hier wird deutlich: Die Jenkinsfile wurde erkannt, die Stages wurden ausgeführt und die Tests sind grün.
+
+  <img src="images/Bild51.png" width="600">
+
+---
+
+- **🔍 SonarQube-Analyse-Ergebnis**  
+  Die Codeanalyse mit SonarQube wurde erneut durchgeführt. Ergebnis: Keine neuen Sicherheitslücken, gute Coverage und keine Regressionsfehler.
+
+  <img src="images/Bild52.png" width="600">
+
+---
+
+- **📋 Zusammenfassung im Jenkins-Dashboard**  
+  Abschliessende Übersicht zur Build-Ausführung im Jenkins-Dashboard. Alle Metriken und Ergebnisse sind klar nachvollziehbar.
+
+  <img src="images/Bild53.png" width="600">
+
+---
+
+✅ **Fazit dieser Validierung:**  
+Die CI-Pipeline ist stabil, dokumentiert und in der Lage, alle Builds automatisiert und zuverlässig auszuführen – inkl. Feedback durch SonarQube und Jenkins Logs.
 
 ---
 
